@@ -4,6 +4,7 @@ import { useAuth } from "~/contexts/auth-context";
 
 export default function Index() {
   const { signOut } = useAuth();
+
   return (
     <View style={styles.view}>
       <Text>Edit app/index.tsx to edit this screen.</Text>
