@@ -1,5 +1,5 @@
 import { View, StyleSheet } from "react-native";
-import { Button, SegmentedButtons, Text, TextInput } from "react-native-paper";
+import { Button, SegmentedButtons, Text, TextInput, useTheme } from "react-native-paper";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FREQUENCIES, habitSchema, HabitSchemaType } from "~/schemas/habit";
@@ -11,6 +11,8 @@ import { useRouter } from "expo-router";
 export default function AddHabitScreen() {
   const { user } = useAuth();
   const router = useRouter();
+
+  const styles = useThemedStyles();
 
   const {
     control,
@@ -113,17 +115,22 @@ export default function AddHabitScreen() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16,
-    backgroundColor: "#f5f5f5",
-    justifyContent: "center"
-  },
+export function useThemedStyles() {
+  const theme = useTheme();
 
-  formFieldContainer: {
-    marginBottom: 16
-  },
-
-  error: { color: "red", marginTop: 8 }
-});
+  return StyleSheet.create({
+    container: {
+      flex: 1,
+      padding: 16,
+      backgroundColor: theme.colors.background,
+      justifyContent: "center"
+    },
+    formFieldContainer: {
+      marginBottom: 16
+    },
+    error: {
+      color: theme.colors.error,
+      marginTop: 8
+    }
+  });
+}

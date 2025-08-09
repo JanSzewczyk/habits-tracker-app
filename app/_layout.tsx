@@ -12,7 +12,7 @@ function RouteGuard({ children }: { children: React.ReactNode }) {
   React.useEffect(() => {
     const isAuthRoute = segments[0] === "auth";
 
-    if (!user && !isLoadingUser && !isAuthRoute) {
+    if ((!user && !isLoadingUser && !isAuthRoute) || (!user && !isLoadingUser)) {
       route.replace("/auth");
     } else if (user && !isLoadingUser && isAuthRoute) {
       route.replace("/");

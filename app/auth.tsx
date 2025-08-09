@@ -1,10 +1,9 @@
 import { KeyboardAvoidingView, Platform, View, StyleSheet } from "react-native";
-import { Button, TextInput, Text, useTheme } from "react-native-paper";
+import { Button, TextInput, Text } from "react-native-paper";
 import * as React from "react";
 import { useAuth } from "~/contexts/auth-context";
 
 export default function AuthScreen() {
-  const theme = useTheme();
   const { signUp, signIn } = useAuth();
 
   const [isSignUp, setIsSignUp] = React.useState<boolean>(false);
@@ -34,7 +33,6 @@ export default function AuthScreen() {
         return;
       }
     } else {
-      console.log("asd asda sda sd");
       const error = await signIn(email, password);
       if (error) {
         setError(error);
