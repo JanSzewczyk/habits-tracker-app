@@ -40,3 +40,6 @@ yarn-error.*
 .vscode
 
 app-example
+
+android
+ios/

@@ -4,6 +4,8 @@ import { AuthProvider, useAuth } from "~/contexts/auth-context";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { PaperProvider } from "react-native-paper";
 
+import "./global.css";
+
 function RouteGuard({ children }: { children: React.ReactNode }) {
   const route = useRouter();
   const { user, isLoadingUser } = useAuth();

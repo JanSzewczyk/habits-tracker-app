@@ -9,14 +9,18 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "pl.szumtech.reactnativeproject",
+      "userInterfaceStyle": "automatic"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "userInterfaceStyle": "automatic",
+      "edgeToEdgeEnabled": true,
+      "package": "pl.szumtech.reactnativeproject"
     },
     "web": {
       "bundler": "metro",
@@ -36,7 +40,9 @@
       ]
     ],
     "experiments": {
-      "typedRoutes": true
+      "typedRoutes": true,
+      "reactCompiler": true,
+      "tsconfigPaths": true
     }
   }
 }
