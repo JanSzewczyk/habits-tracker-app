@@ -34,7 +34,7 @@ export default function AddHabitScreen() {
         description: data.description,
         frequency: data.frequency,
         streakCount: 0,
-        lastCompleted: new Date().toISOString(),
+        lastCompletedAt: new Date().toISOString(),
         createdAt: new Date().toISOString()
       });
 
