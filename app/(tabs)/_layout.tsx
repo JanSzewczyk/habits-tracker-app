@@ -30,7 +30,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="streaks"
         options={{
-          title: "Streaks",
+          title: "Habit Streaks",
           tabBarIcon: ({ color, size }) => <MaterialCommunityIcons name="chart-line" size={size} color={color} />
         }}
       />

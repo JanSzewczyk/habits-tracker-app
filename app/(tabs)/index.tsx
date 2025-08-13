@@ -1,4 +1,4 @@
-import { View, ScrollView, Text, Alert } from "react-native";
+import { View, ScrollView, Text } from "react-native";
 import { Button } from "react-native-paper";
 import { useAuth } from "~/contexts/auth-context";
 import { client, DATABASE_ID, databases, HABITS_COLLECTION_ID, HABITS_COMPLETIONS_COLLECTION_ID } from "~/lib/appwrite";

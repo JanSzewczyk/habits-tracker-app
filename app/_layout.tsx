@@ -1,4 +1,4 @@
-import { Stack, useRouter, useSegments } from "expo-router";
+import { Stack } from "expo-router";
 import * as React from "react";
 import { AuthProvider, useAuth } from "~/contexts/auth-context";
 import { SafeAreaProvider } from "react-native-safe-area-context";
@@ -6,24 +6,23 @@ import { PaperProvider } from "react-native-paper";
 
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
+import { StatusBar } from "expo-status-bar";
+
 import "./global.css";
 
-function RouteGuard({ children }: { children: React.ReactNode }) {
-  const route = useRouter();
-  const { user, isLoadingUser } = useAuth();
-  const segments = useSegments();
+function RootStack() {
+  const { user } = useAuth();
 
-  React.useEffect(() => {
-    const isAuthRoute = segments[0] === "auth";
-
-    if ((!user && !isLoadingUser && !isAuthRoute) || (!user && !isLoadingUser)) {
-      route.replace("/auth");
-    } else if (user && !isLoadingUser && isAuthRoute) {
-      route.replace("/");
-    }
-  }, [user, segments]);
-
-  return <>{children}</>;
+  return (
+    <Stack>
+      <Stack.Protected guard={!!user}>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false, animation: "none" }} />
+      </Stack.Protected>
+      <Stack.Protected guard={!user}>
+        <Stack.Screen name="auth" options={{ headerShown: false, animation: "none" }} />
+      </Stack.Protected>
+    </Stack>
+  );
 }
 
 export default function RootLayout() {
@@ -32,11 +31,8 @@ export default function RootLayout() {
       <AuthProvider>
         <PaperProvider>
           <SafeAreaProvider>
-            <RouteGuard>
-              <Stack>
-                <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-              </Stack>
-            </RouteGuard>
+            <StatusBar style="auto" />
+            <RootStack />
           </SafeAreaProvider>
         </PaperProvider>
       </AuthProvider>

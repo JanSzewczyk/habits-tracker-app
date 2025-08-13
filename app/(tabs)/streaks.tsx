@@ -128,8 +128,6 @@ export default function StreaksScreen() {
 
   return (
     <View className="flex-1">
-      <Text className="p-4 text-2xl font-bold">Habit Streaks</Text>
-
       {rankedHabits.length ? (
         <View className="mx-4 mb-6 rounded-lg bg-white p-4 shadow-md">
           <Text className="mb-3 text-xl font-bold text-purple-500">🎖️ Top Streaks</Text>
