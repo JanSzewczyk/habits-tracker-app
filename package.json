@@ -2,6 +2,19 @@
   "name": "habits-tracker-app",
   "version": "1.0.0",
   "private": true,
+  "keywords": [
+    "react-native",
+    "expo",
+    "typescript",
+    "habits-tracker",
+    "mobile-app",
+    "appwrite",
+    "nativewind",
+    "tailwindcss",
+    "react-hook-form",
+    "expo-router",
+    "cross-platform"
+  ],
   "main": "expo-router/entry",
   "scripts": {
     "android": "expo start --android",
