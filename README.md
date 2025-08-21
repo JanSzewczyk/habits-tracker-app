@@ -1,50 +1,53 @@
-# Welcome to your Expo app 👋
+# Habits Tracker App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A mobile application built with React Native and Expo that helps users track their daily habits. Features a tab-based navigation system, authentication, and habit streak tracking capabilities. The app uses Appwrite as a backend service and supports both light and dark themes.
 
-## Get started
+## Technologies
 
-1. Install dependencies
+- **TypeScript** & **JavaScript**: Core programming languages
+- **React Native** & **Expo Router**: For mobile app development and navigation
+- **TailwindCSS** & **NativeWind**: For styling
+- **Appwrite**: Backend services and authentication
+- **Expo**: Development and build tooling
 
-   ```bash
-   npm install
-   ```
+## Project Structure
 
-2. Start the app
+- `/app`: Main application routes and screens
+- `/components`: Reusable UI components
+- `/contexts`: React context providers
+- `/lib`: Third-party service configurations
+- `/schemas`: Data validation schemas
+- `/types`: TypeScript type definitions
 
-   ```bash
-   npx expo start
-   ```
+## Scripts
 
-In the output, you'll find options to open the app in a
+- `npm start`: Launch Expo development server
+- `npm run android`: Run on Android device/emulator
+- `npm run ios`: Run on iOS simulator/device
+- `npm run web`: Run in web browser
+- `npm run lint`: Check code style
+- `npm run prettier:write`: Format code with Prettier
+- `npm test`: Run tests
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Setup
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+1. Clone the repository:
 ```bash
-npm run reset-project
+git clone https://github.com/JanSzewczyk/react-native-project.git
+```
+2. Install dependencies:
+```bash
+npm install
+```
+  
+3. Start development server:
+```bash
+npm start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Building
+* Android: npm run build:android
+* iOS: npm run build:ios
+* Web: npm run build
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+The app is configured to run on iOS (including tablets), Android (with edge-to-edge support), and web platforms.
