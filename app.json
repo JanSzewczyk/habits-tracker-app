@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "react-native-project",
-    "slug": "react-native-project",
+    "name": "habits-tracker-app",
+    "slug": "habits-tracker-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -10,7 +10,7 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "pl.szumtech.reactnativeproject",
+      "bundleIdentifier": "pl.szumtech.habitstrackerapp",
       "userInterfaceStyle": "automatic"
     },
     "android": {
@@ -20,7 +20,7 @@
       },
       "userInterfaceStyle": "automatic",
       "edgeToEdgeEnabled": true,
-      "package": "pl.szumtech.reactnativeproject"
+      "package": "pl.szumtech.habitstrackerapp"
     },
     "web": {
       "bundler": "metro",
