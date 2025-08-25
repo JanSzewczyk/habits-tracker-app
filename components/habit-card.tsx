@@ -16,8 +16,8 @@ export function HabitCard({ ref, onSwipeableOpen, habit, isCompleted }: HabitCar
   return (
     <ReanimatedSwipeable
       ref={ref}
-      overshootLeft={false}
-      overshootRight={false}
+      overshootLeft
+      overshootRight
       renderLeftActions={() => (
         <View className="mx-4 my-2 flex-1 items-start justify-center rounded-2xl bg-red-300/50 pl-4">
           {isCompleted ? (

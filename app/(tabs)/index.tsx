@@ -18,6 +18,7 @@ export default function Index() {
 
   async function fetchHabits() {
     try {
+      console.log("fetching habts");
       const response = await databases.listDocuments(DATABASE_ID, HABITS_COLLECTION_ID, [
         Query.equal("userId", user?.$id ?? "")
       ]);
@@ -47,6 +48,7 @@ export default function Index() {
   React.useEffect(() => {
     const habitsChanel = `databases.${DATABASE_ID}.collections.${HABITS_COLLECTION_ID}.documents`;
     const habitsSubscription = client.subscribe(habitsChanel, (response: RealtimeResponseEvent<any>) => {
+      console.log(habitsChanel, "as da sda sd ", response);
       if (response.events.includes("databases.*.collections.*.documents.*.create")) {
         void fetchHabits();
       } else if (response.events.includes("databases.*.collections.*.documents.*.update")) {
@@ -58,6 +60,8 @@ export default function Index() {
 
     const completionsChanel = `databases.${DATABASE_ID}.collections.${HABITS_COMPLETIONS_COLLECTION_ID}.documents`;
     const completionsSubscription = client.subscribe(completionsChanel, (response: RealtimeResponseEvent<any>) => {
+      console.log(habitsChanel, "as da sda sd ", response);
+
       if (response.events.includes("databases.*.collections.*.documents.*.create")) {
         void fetchTodayCompletions();
       }
@@ -65,7 +69,8 @@ export default function Index() {
 
     void fetchHabits();
     void fetchTodayCompletions();
-
+    habitsSubscription();
+    completionsSubscription();
     return () => {
       habitsSubscription();
       completionsSubscription();
@@ -76,6 +81,8 @@ export default function Index() {
     if (!user || completedHabits.map((completedHabit) => completedHabit.habitId).includes(habitId)) {
       return;
     }
+
+    console.log("Habit", habitId);
 
     try {
       await databases.deleteDocument(DATABASE_ID, HABITS_COLLECTION_ID, habitId);

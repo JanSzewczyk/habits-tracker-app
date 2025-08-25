@@ -28,6 +28,7 @@ export default function AddHabitScreen() {
     }
 
     try {
+      console.log("asd asd asd ");
       await databases.createDocument(DATABASE_ID, HABITS_COLLECTION_ID, ID.unique(), {
         userId: user.$id,
         title: data.title,
@@ -37,6 +38,7 @@ export default function AddHabitScreen() {
         lastCompletedAt: new Date().toISOString(),
         createdAt: new Date().toISOString()
       });
+      console.log("asd asd asd end");
 
       router.back();
     } catch (e) {
