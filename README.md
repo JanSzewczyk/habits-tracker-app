@@ -2,7 +2,6 @@
 
 # 🎯 Habits Tracker App
 
-![License](https://img.shields.io/github/license/JanSzewczyk/habits-tracker-app?style=flat-square)
 ![Stars](https://img.shields.io/github/stars/JanSzewczyk/habits-tracker-app?style=flat-square)
 ![Version](https://img.shields.io/badge/version-1.0.0-blue?style=flat-square)
 ![Expo](https://img.shields.io/badge/expo-53.0.22-blue?style=flat-square)
